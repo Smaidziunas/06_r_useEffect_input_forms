@@ -8,7 +8,7 @@ function Login(props) {
   const [errorValue, setErrorValue] = useState('');
 
   // log in state
-  const [logInValue, setlogInValue] = useState();
+  const [logInValue, setlogInValue] = useState(false);
 
   function emailInputHandler(e) {
     setEmailValue(e.target.value);
@@ -59,6 +59,7 @@ function Login(props) {
         if (dataInJs.error) {
           console.log('klaida');
           // jei klaida tai setinam klaida
+          setErrorValue(dataInJs.error);
         }
         if (dataInJs.token) {
           // jei sekme ta consolinam sekme ,
